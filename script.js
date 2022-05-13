@@ -3,8 +3,10 @@ const apikey = "129a9c413df34a820810998372aa670c";
 const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
+const stat = document.getElementById("status");
 const left = document.getElementById("left");
 const right = document.getElementById("right");
+const box = document.getElementById("box");
 
 const url = (city) =>
   `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
@@ -17,7 +19,8 @@ async function getWeatherByLocation(city) {
 
   addWeatherToPage(respData, city);
   addtemp(respData);
-  addstate(respData);
+  addstate(respData, city);
+  //   if (time >= 18 && time <= 6) {
 }
 
 function addWeatherToPage(data, city) {
@@ -28,8 +31,8 @@ function addWeatherToPage(data, city) {
 
   weather.innerHTML = `
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
-        <br>
-        <small>${city}</small>
+        
+        
     `;
 
   // cleanup
@@ -54,21 +57,18 @@ function addtemp(data) {
   left.appendChild(weather);
 }
 
-function addstate(data) {
-  const weather = document.createElement("state");
+function addstate(data, city) {
+  const weather = document.createElement("div");
   weather.classList.add("status");
-
   weather.innerHTML = `
-        <small id="status">${data.weather[0].description}</small>
-         <form id="form">
-                <input type="text" id="search" placeholder="Search by location" autocomplete="off" />
-            </form>
+        <small>${data.weather[0].description} , </small>
+         <small>${city}</small>
             `;
 
   // cleanup
-  right.innerHTML = "";
+  stat.innerHTML = "";
 
-  right.appendChild(weather);
+  stat.appendChild(weather);
 }
 
 function KtoC(K) {

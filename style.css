@@ -32,28 +32,31 @@ input:focus {
 }
 
 .weather {
-    font-size: 2rem;
-    text-align: center;
+justify-items: center;
+  
 }
 
-.weather h2 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0;
-}
+
 .top-box {
     flex-direction: row;
 }
 
-.status{
+.status {
     font-size: 2rem;
-    text-align:justify;
-    margin-bottom: 20px;
+    text-align: justify;
+    margin-bottom: 10px;
+    margin-top: 10px;
     margin-left: 20px;
 }
-#left{
+
+#right{
+    margin: 0 15px  ;
+}
+#left {
     font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 5px;
-        margin-right: 20px;
+    text-align: center;
+   margin : 0 5px 20px 10px;
+}
+small{
+    text-align: center;
 }
