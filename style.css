@@ -18,7 +18,7 @@ body {
 input {
     background-color: #fff;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     font-family: inherit;
     font-size: 1rem;
@@ -39,4 +39,20 @@ input:focus {
     display: flex;
     align-items: center;
     margin-bottom: 0;
+}
+.box {
+    flex-direction: row;
+}
+
+.status{
+    font-size: 2rem;
+    text-align:justify;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+#left{
+    font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 5px;
+        margin-right: 20px;
 }
