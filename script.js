@@ -17,13 +17,13 @@ async function getWeatherByLocation(city) {
 
   console.log(respData);
 
-  addWeatherToPage(respData, city);
+  addWeatherToPage(respData);
   addtemp(respData);
-  addstate(respData, city);
+  addstate(respData);
   //   if (time >= 18 && time <= 6) {
 }
 
-function addWeatherToPage(data, city) {
+function addWeatherToPage(data) {
   const temp = KtoC(data.main.temp);
 
   const weather = document.createElement("div");
@@ -62,7 +62,7 @@ function addstate(data, city) {
   weather.classList.add("status");
   weather.innerHTML = `
         <small>${data.weather[0].description} , </small>
-         <small>${city}</small>
+         <small>Humidity:${data.main.humidity}</small>
             `;
 
   // cleanup
